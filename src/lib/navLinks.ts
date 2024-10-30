@@ -1,15 +1,20 @@
-import { FileStack, Home, MapPin, SquareCheck, Users } from "lucide-react";
+import { Home,  Users, Users2 } from "lucide-react";
 
 export const navLinks = [
   {
-    name: "Dashboard",
-    href: "/dashboard",
+    name: "Admin",
+    href: "/admin",
     icon: Home,
   },
   {
-    name: "Clients",
-    href: "/dashboard/clients",
+    name: "Managers",
+    href: "/managers",
     icon: Users,
+  },
+  {
+    name: "Team",
+    href: "/team",
+    icon: Users2,
   },
  
 

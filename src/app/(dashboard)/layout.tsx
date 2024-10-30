@@ -42,6 +42,8 @@ export default async function DashboardLayout({ children }: { children: ReactNod
               </Link>
             </div>
             <div className="flex-1 ">
+              
+
               <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
                 <DashboardItems />
               </nav>
@@ -73,10 +75,36 @@ export default async function DashboardLayout({ children }: { children: ReactNod
                 </nav>
               </SheetContent>
             </Sheet>
-
-            <div className="ml-auto flex items-center gap-x-4">
+ {/* SEARCH BAR */}
+ <div className="hidden items-center gap-2 rounded-full  px-2 text-xs ring-[1.5px] ring-gray-300 md:flex">
+        <Image src="/search.png" alt="" width={14} height={14} />
+        <input
+          type="text"
+          placeholder="Search..."
+          className="w-[200px] bg-transparent p-2 outline-none"
+        />
+      </div>
+     
+            <div className="ml-auto  flex items-center gap-x-4">
+              
+               {/*  USER */}
+      <div className="flex flex-col">
+          <span className="text-xs font-medium  leading-3 mr-4">John Richardson</span>
+          <span className=" text-[10px] text-gray-500">
+            User Role
+          </span>
+        </div>
               <ThemeToggle />
               <Button>Sign In</Button>
+              <div className="relative flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white">
+          <Image src="/announcement.png" alt="" width={20} height={20} />
+          <div className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded-full bg-purple-500 text-xs text-white">
+            1
+          </div>
+          </div>
+          
+        
+       
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   
@@ -101,6 +129,7 @@ export default async function DashboardLayout({ children }: { children: ReactNod
                   
                 </DropdownMenuContent>
               </DropdownMenu>
+              
             </div>
           </header>
           
