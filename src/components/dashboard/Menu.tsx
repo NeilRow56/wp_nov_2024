@@ -126,7 +126,7 @@ const Menu = () => {
                 <Link
                   href={item.href}
                   key={item.label}
-                  className="hover:bg-lamaSkyLight flex items-center justify-center gap-4 rounded-md py-2 text-gray-500 md:px-2 lg:justify-start"
+                  className="flex items-center justify-center gap-4 rounded-md py-2 text-gray-500 hover:bg-blue-100 hover:text-green-600 md:px-2 lg:justify-start"
                 >
                   <Image src={item.icon} alt="" width={20} height={20} />
                   <span className="hidden lg:block">{item.label}</span>
