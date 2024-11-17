@@ -1,5 +1,7 @@
+import Menu from "@/components/dashboard/Menu";
 import Navbar from "@/components/dashboard/Navbar";
 import { Logo } from "@/components/shared/Logo";
+import { File } from "lucide-react";
 import Link from "next/link";
 
 export default function DashboardLayout({
@@ -15,11 +17,12 @@ export default function DashboardLayout({
           href="/"
           className="flex items-center justify-center gap-2 lg:justify-start"
         >
+          <File className="stroke h-8 w-8 stroke-amber-500 stroke-[1.5] lg:hidden" />
           <span className="hidden font-bold lg:block">
             <Logo />
           </span>
         </Link>
-        MENU COMPONENT
+        <Menu />
       </div>
       {/* RIGHT */}
       <div className="flex w-[86%] flex-col overflow-scroll bg-green-50 md:w-[92%] lg:w-[80%] xl:w-[86%]">
