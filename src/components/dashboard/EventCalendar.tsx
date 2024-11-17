@@ -49,7 +49,7 @@ const EventCalendar = () => {
           >
             <div className="flex items-center justify-between">
               <h1 className="font-semibold text-gray-600">{event.title}</h1>
-              <span className="text-xs text-gray-300">{event.time}</span>
+              <span className="text-xs text-gray-400">{event.time}</span>
             </div>
             <p className="mt-2 text-sm text-gray-400">{event.description}</p>
           </div>
