@@ -22,13 +22,13 @@ const AdminPage = () => {
           </div>
         </div>
         {/* BOTTOM CHART */}
-        <div className="h-[500px] w-full bg-green-50">
+        <div className="h-[500px] w-full">
           <Announcements />
         </div>
       </div>
       {/* RIGHT */}
       <div className="flex w-full flex-col gap-8 lg:w-1/3">
-        <div className="h-[450px] bg-red-50">
+        <div className="h-[450px]">
           <EventCalendar />
         </div>
       </div>

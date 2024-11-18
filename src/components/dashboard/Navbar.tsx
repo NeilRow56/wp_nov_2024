@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,7 @@ const Navbar = () => {
       </div>
       {/* ICONS AND USER */}
       <div className="flex w-full items-center justify-end gap-6">
+        {/* <ThemeToggle /> */}
         <div className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white">
           <Image src="/message.png" alt="" width={20} height={20} />
         </div>

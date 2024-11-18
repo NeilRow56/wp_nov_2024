@@ -44,7 +44,7 @@ const EventCalendar = () => {
       <div className="flex flex-col gap-4">
         {events.map((event) => (
           <div
-            className="odd:border-t-lamaSky even:border-t-lamaPurple rounded-md border-2 border-t-4 border-gray-100 p-5"
+            className="rounded-md border-2 border-t-4 border-gray-100 p-5 odd:border-t-blue-100 even:border-t-yellow-100"
             key={event.id}
           >
             <div className="flex items-center justify-between">
