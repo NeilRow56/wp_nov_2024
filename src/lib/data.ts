@@ -13,7 +13,7 @@ export const managersData = [
     phone: 1234567890,
     subjects: ["Math", "Geometry"],
     classes: ["1B", "2A", "3C"],
-    address: "12 Main St, Anytown, USA",
+    address: "12 Fallow St, Anytown, USA",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const managersData = [
     phone: 1234567890,
     subjects: ["Physics", "Chemistry"],
     classes: ["5A", "4B", "3C"],
-    address: "15 Main St, Anytown, USA",
+    address: "15 Stag St, Anytown, USA",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ export const managersData = [
     phone: 1234567890,
     subjects: ["Biology"],
     classes: ["5A", "4B", "3C"],
-    address: "183 Main St, Anytown, USA",
+    address: "183 Otter St, Anytown, USA",
   },
   {
     id: 4,

@@ -18,9 +18,11 @@ import {
 } from "../ui/table";
 import {
   ColumnDef,
+  ColumnFiltersState,
   SortingState,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
@@ -35,6 +37,7 @@ import {
 
 import React, { CSSProperties } from "react";
 import { Button } from "../ui/button";
+import { Input } from "@/components/ui/input";
 
 const DEFAULT_REACT_TABLE_COLUMN_WIDTH = 150;
 
@@ -48,6 +51,10 @@ const DataTable = <TData, TValue>({
   columns,
 }: DataTableProps<TData, TValue>) => {
   const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+    [],
+  );
+
   const table = useReactTable({
     data,
     columns,
@@ -55,12 +62,25 @@ const DataTable = <TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
+      columnFilters,
     },
   });
   return (
     <>
+      <div className="flex items-center pb-2">
+        <Input
+          placeholder="Filter addresses..."
+          value={(table.getColumn("address")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("address")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        />
+      </div>
       <div className="rounded-md border">
         <Table>
           <TableHeader>
