@@ -68,9 +68,6 @@ const ManagersListPage = () => {
           </div>
         </div>
       )}
-
-      {/* PAGINATION */}
-      <Pagination />
     </div>
   );
 };

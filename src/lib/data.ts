@@ -123,6 +123,30 @@ export const managersData = [
     classes: ["5A", "4B", "3C"],
     address: "123 Main St, Anytown, USA",
   },
+  {
+    id: 11,
+    teacherId: "1234567890",
+    name: "John Smith",
+    email: "john@smith.com",
+    photo:
+      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: 1234567890,
+    subjects: ["Math", "Geometry"],
+    classes: ["1B", "2A", "3C"],
+    address: "123 Main St, Anytown, USA",
+  },
+  {
+    id: 12,
+    teacherId: "1234567890",
+    name: "Jane Smith",
+    email: "jane@smith.com",
+    photo:
+      "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    phone: 1234567890,
+    subjects: ["Physics", "Chemistry"],
+    classes: ["5A", "4B", "3C"],
+    address: "123 Main St, Anytown, USA",
+  },
 ];
 export const staffData = [
   {

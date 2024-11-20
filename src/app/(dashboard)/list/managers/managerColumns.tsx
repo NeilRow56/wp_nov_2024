@@ -121,7 +121,7 @@ export const columns: ColumnDef<Manager>[] = [
       );
     },
     cell: ({ row }) => {
-      // IMPORTANT THIS IS THE CLIENT DATA FROM WHICH YOU CAN GET THE ID
+      // IMPORTANT THIS IS THE MANAGER DATA FROM WHICH YOU CAN GET THE ID
       const manager = row.original;
 
       return (
