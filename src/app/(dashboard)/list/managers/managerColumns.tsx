@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { MoreHorizontal } from "lucide-react";
+import NumberFormat from "@/components/shared/NumberFormat";
 
 export const columns: ColumnDef<Manager>[] = [
   {
@@ -28,7 +29,7 @@ export const columns: ColumnDef<Manager>[] = [
       );
     },
     cell: ({ row }) => (
-      <div className="flex p-2">
+      <div className="flex p-1">
         <Image
           src={row.original.photo}
           alt=""
@@ -85,16 +86,17 @@ export const columns: ColumnDef<Manager>[] = [
     },
     cell: ({ row }) => (
       <div className={cn("rounded-lg bg-green-100 p-2 text-right capitalize")}>
-        <MoneyWithCurrency amount={row.original.phone} />
+        <NumberFormat amount={row.original.phone} />
       </div>
     ),
+
     footer: (props) => {
       const totalBalance = props.table
         .getRowModel()
         .rows.reduce((sum, phoneRow) => sum + phoneRow.original.phone, 0);
       return (
         <div className="pr-2 text-right font-semibold">
-          <MoneyWithCurrency amount={totalBalance} />
+          <NumberFormat amount={totalBalance} />
         </div>
       );
     },

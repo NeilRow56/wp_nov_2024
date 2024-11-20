@@ -1,22 +1,7 @@
-import Big from "big.js";
-
-export const MAX_VALUE = 9999999.99;
-
-const currencyFormatter = new Intl.NumberFormat("en-GB", {
+export const formatter = new Intl.NumberFormat("en-GB", {
   style: "currency",
   currency: "GBP",
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
+  trailingZeroDisplay: "stripIfInteger",
 });
-
-export const formatCurrency = (value: number) => {
-  return currencyFormatter.format(value);
-};
-
-export const toCents = (amount: number): number =>
-  new Big(amount).times(100).toNumber();
-
-export const convertCurrencyToNumber = (amount: string): number =>
-  parseFloat(amount.replace(",", "."));
-export const isAmountWithinRange = (amount: number): boolean =>
-  MAX_VALUE * -1 <= amount && amount <= MAX_VALUE;

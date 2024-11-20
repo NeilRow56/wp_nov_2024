@@ -17,7 +17,6 @@ import {
 } from "@tanstack/react-table";
 
 import { CSSProperties } from "react";
-import { EmptyState } from "../shared/EmptyState";
 
 const DEFAULT_REACT_TABLE_COLUMN_WIDTH = 150;
 
