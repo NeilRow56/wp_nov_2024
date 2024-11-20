@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
         hostname: "static.vecteezy.com",
       },
       {
+        hostname: "images.pexels.com",
+      },
+      {
         hostname: "avatar.vercel.sh",
         port: "",
       },
@@ -20,7 +23,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
- 
 };
 
 export default nextConfig;

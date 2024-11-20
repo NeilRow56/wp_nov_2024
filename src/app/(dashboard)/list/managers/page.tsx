@@ -1,70 +1,74 @@
 import Pagination from "@/components/dashboard/Pagination";
-import Table from "@/components/dashboard/Table";
 import TableSearch from "@/components/dashboard/TableSearch";
+import DataTable from "@/components/tables/DataTable";
 import { role, managersData } from "@/lib/data";
+import { PlusCircle } from "lucide-react";
 import Image from "next/image";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
-const columns = [
-  {
-    header: "Info",
-    accessor: "info",
-  },
-  {
-    header: "Teacher ID",
-    accessor: "teacherId",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Subjects",
-    accessor: "subjects",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Classes",
-    accessor: "classes",
-    className: "hidden md:table-cell",
-  },
-  {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Address",
-    accessor: "address",
-    className: "hidden lg:table-cell",
-  },
-  {
-    header: "Actions",
-    accessor: "action",
-  },
-];
+import { columns } from "./managerColumns";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 const ManagersListPage = () => {
   return (
     <div className="m-4 mt-0 flex-1 rounded-md bg-white p-4">
       {/* TOP */}
       <div className="flex items-center justify-between">
-        <h1 className="hidden text-lg font-semibold md:block">All Teachers</h1>
+        {/* <h1 className="hidden text-lg font-semibold md:block">All Managers</h1> */}
+        <div />
         <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
-            <button className="bg-lamaYellow flex h-8 w-8 items-center justify-center rounded-full">
+            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
               <Image src="/filter.png" alt="" width={14} height={14} />
             </button>
-            <button className="bg-lamaYellow flex h-8 w-8 items-center justify-center rounded-full">
+            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
             {role === "admin" && (
-              <button className="bg-lamaYellow flex h-8 w-8 items-center justify-center rounded-full">
-                <Image src="/plus.png" alt="" width={14} height={14} />
+              <button className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
+                <PlusCircle />
               </button>
             )}
           </div>
         </div>
       </div>
       {/* LIST */}
-      <Table columns={columns} data={managersData} />
+
+      {managersData === undefined || managersData.length === 0 ? (
+        <div className="container mx-auto mt-8">
+          <EmptyState
+            title="You dont have any Managers created"
+            description="You currently dont have any Managers. Once created you can
+      see them here!"
+            buttonText="Create Manager"
+            href="/managers/newManager"
+          />
+        </div>
+      ) : (
+        <div className="container mx-auto mt-4">
+          <div className="">
+            <Card>
+              <CardHeader>
+                <CardTitle className="mb-2 text-3xl font-bold text-primary">
+                  Managers
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <DataTable data={managersData} columns={columns} />
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      )}
+
       {/* PAGINATION */}
       <Pagination />
     </div>
