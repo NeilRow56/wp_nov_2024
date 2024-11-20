@@ -18,9 +18,11 @@ import {
 } from "../ui/table";
 import {
   ColumnDef,
+  SortingState,
   flexRender,
   getCoreRowModel,
   getPaginationRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import {
@@ -31,7 +33,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { CSSProperties } from "react";
+import React, { CSSProperties } from "react";
 import { Button } from "../ui/button";
 
 const DEFAULT_REACT_TABLE_COLUMN_WIDTH = 150;
@@ -45,11 +47,17 @@ const DataTable = <TData, TValue>({
   data,
   columns,
 }: DataTableProps<TData, TValue>) => {
+  const [sorting, setSorting] = React.useState<SortingState>([]);
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    onSortingChange: setSorting,
+    getSortedRowModel: getSortedRowModel(),
+    state: {
+      sorting,
+    },
   });
   return (
     <>

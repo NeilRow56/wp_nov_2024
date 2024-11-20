@@ -15,7 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { MoreHorizontal } from "lucide-react";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import NumberFormat from "@/components/shared/NumberFormat";
 
 export const columns: ColumnDef<Manager>[] = [
@@ -103,10 +103,16 @@ export const columns: ColumnDef<Manager>[] = [
   },
   {
     accessorKey: "address",
-    header: () => {
+    header: ({ column }) => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
-          Address
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Address
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       );
     },
