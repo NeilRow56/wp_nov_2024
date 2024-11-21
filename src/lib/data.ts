@@ -156,10 +156,10 @@ export const staffData = [
     email: "john@doe.com",
     photo:
       "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
+    phone: 1234567890,
+    grade: 2,
     class: "1B",
-    address: "123 Main St, Anytown, USA",
+    address: "3 Rock St, Anytown, USA",
   },
   {
     id: 2,
@@ -168,10 +168,10 @@ export const staffData = [
     email: "jane@doe.com",
     photo:
       "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
+    phone: 1234567890,
+    grade: 4,
     class: "5A",
-    address: "123 Main St, Anytown, USA",
+    address: "18 Fallow Road, Anytown, USA",
   },
   {
     id: 3,
@@ -180,10 +180,10 @@ export const staffData = [
     email: "mike@geller.com",
     photo:
       "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
-    address: "123 Main St, Anytown, USA",
+    address: "12 Otter Close St, Anytown, USA",
   },
   {
     id: 4,
@@ -192,7 +192,7 @@ export const staffData = [
     email: "jay@gmail.com",
     photo:
       "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, USA",
@@ -204,7 +204,7 @@ export const staffData = [
     email: "jane@gmail.com",
     photo:
       "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, USA",
@@ -216,7 +216,7 @@ export const staffData = [
     email: "anna@gmail.com",
     photo:
       "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, USA",
@@ -228,7 +228,7 @@ export const staffData = [
     email: "allen@black.com",
     photo:
       "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, USA",
@@ -240,7 +240,7 @@ export const staffData = [
     email: "ophelia@castro.com",
     photo:
       "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, USA",
@@ -252,7 +252,7 @@ export const staffData = [
     email: "derek@briggs.com",
     photo:
       "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, USA",
@@ -264,10 +264,57 @@ export const staffData = [
     email: "john@glover.com",
     photo:
       "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
+    phone: 1234567890,
     grade: 5,
     class: "5A",
     address: "123 Main St, Anytown, USA",
+  },
+];
+export const clientData = [
+  {
+    id: 1,
+    name: "John Doe Limited",
+    category: "Limited Company",
+    periodEnding: "31 December 2023",
+    contactInfo: "Telephone Bob on 01536 4177778",
+    status: "active",
+    createdAt: "1 Novenver 2024",
+  },
+  {
+    id: 2,
+    name: "Mith Limited",
+    category: "Limited Company",
+    periodEnding: "31 March 2024",
+    contactInfo: "Telephone Sarah on 01536 4177778",
+    status: "active",
+    createdAt: "12 Novenver 2024",
+  },
+  {
+    id: 3,
+    name: "John Smith",
+    category: "Sole Trader",
+    periodEnding: "31 July 2024",
+    contactInfo: "email Ron ron@gmail.com",
+    status: "active",
+    createdAt: "1 Novenver 2024",
+  },
+  {
+    id: 4,
+    name: "Grays Partmership",
+    category: "partnership",
+    periodEnding: "31 December 2023",
+    contactInfo: "Telephone Gail on 01536 4177778",
+    status: "active",
+    createdAt: "13 Novenver 2024",
+  },
+  {
+    id: 5,
+    name: "Davison Limited",
+    category: "Limited Company",
+    periodEnding: "31 December 2023",
+    contactInfo: "Telephone Bob on 01536 4177778",
+    status: "archived",
+    createdAt: "1 Novenver 2020",
   },
 ];
 

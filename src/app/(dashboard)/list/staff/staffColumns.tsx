@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Manager } from "@/types/Manager.types";
+
 import { ColumnDef } from "@tanstack/react-table";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -16,8 +16,9 @@ import {
 import Link from "next/link";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import NumberFormat from "@/components/shared/NumberFormat";
+import { Staff } from "@/types/Staff.types";
 
-export const columns: ColumnDef<Manager>[] = [
+export const columns: ColumnDef<Staff>[] = [
   {
     accessorKey: "info",
     header: () => {
@@ -45,31 +46,31 @@ export const columns: ColumnDef<Manager>[] = [
     footer: "Total",
   },
   {
-    accessorKey: "teacherId",
+    accessorKey: "studentId",
     header: () => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Teacher ID
+          Team ID
         </div>
       );
     },
   },
   {
-    accessorKey: "subjects",
+    accessorKey: "grade",
     header: () => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Subjects
+          Grade
         </div>
       );
     },
   },
   {
-    accessorKey: "classes",
+    accessorKey: "class",
     header: () => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Classes
+          Class
         </div>
       );
     },
@@ -126,8 +127,8 @@ export const columns: ColumnDef<Manager>[] = [
       );
     },
     cell: ({ row }) => {
-      // IMPORTANT THIS IS THE MANAGER DATA FROM WHICH YOU CAN GET THE ID
-      const manager = row.original;
+      // IMPORTANT THIS IS THE STAFF DATA FROM WHICH YOU CAN GET THE ID
+      const staff = row.original;
 
       return (
         <DropdownMenu>
@@ -142,13 +143,13 @@ export const columns: ColumnDef<Manager>[] = [
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}`}>Files</Link>
+              <Link href={`/manager/${staff.id}`}>Files</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}/editClient`}>Edit</Link>
+              <Link href={`/manager/${staff.id}/editClient`}>Edit</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}/deleteClient`}>Delete</Link>
+              <Link href={`/manager/${staff.id}/deleteClient`}>Delete</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
