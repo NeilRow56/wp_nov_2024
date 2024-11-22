@@ -20,8 +20,8 @@ const menuItems = [
       },
       {
         icon: "/student.png",
-        label: "Staff",
-        href: "/list/staff",
+        label: "Team",
+        href: "/list/team",
         visible: ["admin", "manager"],
       },
 

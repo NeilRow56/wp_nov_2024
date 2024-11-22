@@ -53,7 +53,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-const DataTable = <TData, TValue>({
+const ClientDataTable = <TData, TValue>({
   data,
   columns,
 }: DataTableProps<TData, TValue>) => {
@@ -83,14 +83,26 @@ const DataTable = <TData, TValue>({
   return (
     <>
       <div className="flex items-center pb-2">
-        <Input
-          placeholder="Filter managers..."
-          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("name")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        />
+        <div className="flex lg:gap-24 xl:gap-[370px]">
+          <Input
+            placeholder="Filter client name..."
+            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("name")?.setFilterValue(event.target.value)
+            }
+            className="max-w-sm"
+          />
+          <Input
+            placeholder="Filter categories..."
+            value={
+              (table.getColumn("category")?.getFilterValue() as string) ?? ""
+            }
+            onChange={(event) =>
+              table.getColumn("category")?.setFilterValue(event.target.value)
+            }
+            className="hidden max-w-sm lg:block"
+          />
+        </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -194,7 +206,7 @@ const DataTable = <TData, TValue>({
       <div className="mt-10 flex items-center justify-between px-2">
         <div className="flex-1 text-sm text-muted-foreground">
           {/* {table.getFilteredSelectedRowModel().rows.length} of{" "} */}
-          {table.getFilteredRowModel().rows.length} file(s) .
+          {table.getFilteredRowModel().rows.length} record(s) .
         </div>
         <div className="flex items-center space-x-6 lg:space-x-8">
           <div className="flex items-center space-x-2">
@@ -267,4 +279,4 @@ const DataTable = <TData, TValue>({
   );
 };
 
-export default DataTable;
+export default ClientDataTable;

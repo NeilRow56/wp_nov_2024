@@ -1,6 +1,6 @@
 export type Staff = {
   id: number;
-  studentId: string;
+  teamId: string;
   name: string;
   email?: string;
   photo: string;

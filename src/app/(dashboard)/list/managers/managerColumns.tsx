@@ -19,16 +19,16 @@ import NumberFormat from "@/components/shared/NumberFormat";
 
 export const columns: ColumnDef<Manager>[] = [
   {
-    accessorKey: "info",
+    accessorKey: "name",
     header: () => {
       return (
         <div className="flex justify-start pl-4 font-semibold text-orange-400">
-          Info
+          Name
         </div>
       );
     },
     cell: ({ row }) => (
-      <div className="flex p-1">
+      <div className="flex items-center p-1">
         <Image
           src={row.original.photo}
           alt=""
@@ -36,44 +36,62 @@ export const columns: ColumnDef<Manager>[] = [
           height={40}
           className="mr-4 h-10 w-10 rounded-full object-cover md:hidden xl:block"
         />
-        <div className="flex flex-col">
-          <div>{row.original.name}</div>
-          <div>{row.original.email}</div>
-        </div>
+        <div>{row.original.name}</div>
       </div>
     ),
     footer: "Total",
   },
   {
-    accessorKey: "teacherId",
-    header: () => {
+    accessorKey: "email",
+    header: ({ column }) => {
       return (
-        <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Teacher ID
+        <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Email
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       );
     },
+    cell: ({ row }) => (
+      <div className={cn("rounded-lg p-2 text-start capitalize")}>
+        {row.original.email}
+      </div>
+    ),
   },
   {
-    accessorKey: "subjects",
+    accessorKey: "managerId",
     header: () => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Subjects
+          Manager ID
         </div>
       );
     },
   },
-  {
-    accessorKey: "classes",
-    header: () => {
-      return (
-        <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Classes
-        </div>
-      );
-    },
-  },
+  // {
+  //   accessorKey: "subjects",
+  //   header: () => {
+  //     return (
+  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
+  //         Subjects
+  //       </div>
+  //     );
+  //   },
+  // },
+  // {
+  //   accessorKey: "classes",
+  //   header: () => {
+  //     return (
+  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
+  //         Classes
+  //       </div>
+  //     );
+  //   },
+  // },
   {
     accessorKey: "phone",
     header: () => {
@@ -100,22 +118,22 @@ export const columns: ColumnDef<Manager>[] = [
       );
     },
   },
-  {
-    accessorKey: "address",
-    header: ({ column }) => {
-      return (
-        <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
-          <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          >
-            Address
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      );
-    },
-  },
+  // {
+  //   accessorKey: "address",
+  //   header: ({ column }) => {
+  //     return (
+  //       <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
+  //         <Button
+  //           variant="ghost"
+  //           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+  //         >
+  //           Address
+  //           <ArrowUpDown className="ml-2 h-4 w-4" />
+  //         </Button>
+  //       </div>
+  //     );
+  //   },
+  // },
   {
     accessorKey: "actions",
     header: () => {
@@ -141,14 +159,14 @@ export const columns: ColumnDef<Manager>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
+            {/* <DropdownMenuItem asChild>
               <Link href={`/manager/${manager.id}`}>Files</Link>
+            </DropdownMenuItem> */}
+            <DropdownMenuItem asChild>
+              <Link href={`/manager/${manager.id}/editManager`}>Edit</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}/editClient`}>Edit</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}/deleteClient`}>Delete</Link>
+              <Link href={`/manager/${manager.id}/deleteManager`}>Delete</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

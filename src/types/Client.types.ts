@@ -1,14 +1,10 @@
-export type Staff = {
+export type Client = {
   id: number;
   name: string;
-  category:
-    | "limited_company"
-    | "partnership"
-    | "sole_trader"
-    | "charity"
-    | "other";
-  periodEnding: string;
-  contactInfo: string;
-  status: "awaiting_ml_checks" | "active" | "archived" | "stop_work";
-  createdAt: string;
+  category: string;
+
+  // periodEnding: string;
+  // contactInfo: string;
+  status: string;
+  // createdAt: string;
 };

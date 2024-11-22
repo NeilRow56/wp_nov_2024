@@ -84,10 +84,10 @@ const StaffDataTable = <TData, TValue>({
     <>
       <div className="flex items-center pb-2">
         <Input
-          placeholder="Filter addresses..."
-          value={(table.getColumn("address")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter team by name..."
+          value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
-            table.getColumn("address")?.setFilterValue(event.target.value)
+            table.getColumn("name")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />

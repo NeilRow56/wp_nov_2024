@@ -1,14 +1,16 @@
 import TableSearch from "@/components/dashboard/TableSearch";
-import { role, staffData } from "@/lib/data";
+import { clientData, role } from "@/lib/data";
 import { PlusCircle } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { EmptyState } from "@/components/shared/EmptyState";
-import { columns } from "./staffColumns";
-import StaffDataTable from "@/components/tables/StaffDataTable";
 
-const StaffListPage = () => {
+import StaffDataTable from "@/components/tables/StaffDataTable";
+import { columns } from "./clientColumns";
+import ClientDataTable from "@/components/tables/ClientDataTable";
+
+const ClientListPage = () => {
   return (
     <div className="m-4 mt-0 flex-1 rounded-md bg-white p-4">
       {/* TOP */}
@@ -34,14 +36,14 @@ const StaffListPage = () => {
       </div>
       {/* LIST */}
 
-      {staffData === undefined || staffData.length === 0 ? (
+      {clientData === undefined || clientData.length === 0 ? (
         <div className="container mx-auto mt-8">
           <EmptyState
-            title="You dont have any Managers created"
-            description="You currently dont have any Managers. Once created you can
+            title="You don't have any Clients created"
+            description="You currently don't have any clients. Once created you can
       see them here!"
-            buttonText="Create Manager"
-            href="/managers/newManager"
+            buttonText="Create Client"
+            href="/clients/newClient"
           />
         </div>
       ) : (
@@ -49,12 +51,12 @@ const StaffListPage = () => {
           <div className="">
             <Card>
               <CardHeader>
-                <CardTitle className="mb-2 text-3xl font-bold text-primary">
-                  Team
+                <CardTitle className="text-3xl font-bold text-primary">
+                  Clients
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <StaffDataTable data={staffData} columns={columns} />
+                <ClientDataTable data={clientData} columns={columns} />
               </CardContent>
             </Card>
           </div>
@@ -64,4 +66,4 @@ const StaffListPage = () => {
   );
 };
 
-export default StaffListPage;
+export default ClientListPage;

@@ -20,16 +20,16 @@ import { Staff } from "@/types/Staff.types";
 
 export const columns: ColumnDef<Staff>[] = [
   {
-    accessorKey: "info",
+    accessorKey: "name",
     header: () => {
       return (
         <div className="flex justify-start pl-4 font-semibold text-orange-400">
-          Info
+          Name
         </div>
       );
     },
     cell: ({ row }) => (
-      <div className="flex p-1">
+      <div className="flex items-center p-1">
         <Image
           src={row.original.photo}
           alt=""
@@ -37,16 +37,34 @@ export const columns: ColumnDef<Staff>[] = [
           height={40}
           className="mr-4 h-10 w-10 rounded-full object-cover md:hidden xl:block"
         />
-        <div className="flex flex-col">
-          <div>{row.original.name}</div>
-          <div>{row.original.email}</div>
-        </div>
+        <div>{row.original.name}</div>
       </div>
     ),
     footer: "Total",
   },
   {
-    accessorKey: "studentId",
+    accessorKey: "email",
+    header: ({ column }) => {
+      return (
+        <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Email
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      );
+    },
+    cell: ({ row }) => (
+      <div className={cn("rounded-lg p-2 text-start capitalize")}>
+        {row.original.email}
+      </div>
+    ),
+  },
+  {
+    accessorKey: "teamId",
     header: () => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
@@ -55,26 +73,26 @@ export const columns: ColumnDef<Staff>[] = [
       );
     },
   },
-  {
-    accessorKey: "grade",
-    header: () => {
-      return (
-        <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Grade
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "class",
-    header: () => {
-      return (
-        <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-          Class
-        </div>
-      );
-    },
-  },
+  // {
+  //   accessorKey: "grade",
+  //   header: () => {
+  //     return (
+  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
+  //         Grade
+  //       </div>
+  //     );
+  //   },
+  // },
+  // {
+  //   accessorKey: "class",
+  //   header: () => {
+  //     return (
+  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
+  //         Class
+  //       </div>
+  //     );
+  //   },
+  // },
   {
     accessorKey: "phone",
     header: () => {
@@ -128,7 +146,7 @@ export const columns: ColumnDef<Staff>[] = [
     },
     cell: ({ row }) => {
       // IMPORTANT THIS IS THE STAFF DATA FROM WHICH YOU CAN GET THE ID
-      const staff = row.original;
+      const team = row.original;
 
       return (
         <DropdownMenu>
@@ -142,14 +160,14 @@ export const columns: ColumnDef<Staff>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem asChild>
+            {/* <DropdownMenuItem asChild>
               <Link href={`/manager/${staff.id}`}>Files</Link>
+            </DropdownMenuItem> */}
+            <DropdownMenuItem asChild>
+              <Link href={`/team/${team.id}/editTeam`}>Edit</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${staff.id}/editClient`}>Edit</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href={`/manager/${staff.id}/deleteClient`}>Delete</Link>
+              <Link href={`/manager/${team.id}/deleteTeam`}>Delete</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

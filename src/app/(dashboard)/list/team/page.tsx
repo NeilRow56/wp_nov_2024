@@ -1,14 +1,14 @@
 import TableSearch from "@/components/dashboard/TableSearch";
-import DataTable from "@/components/tables/DataTable";
-import { role, managersData } from "@/lib/data";
+import { role, teamData } from "@/lib/data";
 import { PlusCircle } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { columns } from "./managerColumns";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { columns } from "./staffColumns";
+import StaffDataTable from "@/components/tables/StaffDataTable";
 
-const ManagersListPage = () => {
+const StaffListPage = () => {
   return (
     <div className="m-4 mt-0 flex-1 rounded-md bg-white p-4">
       {/* TOP */}
@@ -34,14 +34,14 @@ const ManagersListPage = () => {
       </div>
       {/* LIST */}
 
-      {managersData === undefined || managersData.length === 0 ? (
+      {teamData === undefined || teamData.length === 0 ? (
         <div className="container mx-auto mt-8">
           <EmptyState
-            title="You don't have any Managers created"
-            description="You currently don't have any Managers. Once created you can
+            title="You don't have any Team Members created"
+            description="You currently don't have any team members. Once created you can
       see them here!"
-            buttonText="Create Manager"
-            href="/managers/newManager"
+            buttonText="Create Team Member"
+            href="/team/newTeamMember"
           />
         </div>
       ) : (
@@ -50,11 +50,11 @@ const ManagersListPage = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="text-3xl font-bold text-primary">
-                  Managers
+                  Team
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <DataTable data={managersData} columns={columns} />
+                <StaffDataTable data={teamData} columns={columns} />
               </CardContent>
             </Card>
           </div>
@@ -64,4 +64,4 @@ const ManagersListPage = () => {
   );
 };
 
-export default ManagersListPage;
+export default StaffListPage;
