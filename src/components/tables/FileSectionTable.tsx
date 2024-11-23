@@ -53,7 +53,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-const WorkingPapersFileTable = <TData, TValue>({
+const FileSectionTable = <TData, TValue>({
   data,
   columns,
 }: DataTableProps<TData, TValue>) => {
@@ -83,33 +83,15 @@ const WorkingPapersFileTable = <TData, TValue>({
   return (
     <>
       <div className="flex items-center pb-2">
-        <div className="flex lg:gap-60 2xl:gap-[620px]">
-          <Input
-            placeholder="Filter client name..."
-            id="client"
-            value={
-              (table.getColumn("client")?.getFilterValue() as string) ?? ""
-            }
-            onChange={(event) =>
-              table.getColumn("client")?.setFilterValue(event.target.value)
-            }
-            className="max-w-sm"
-          />
-          <Input
-            placeholder="Filter period ending..."
-            id="periodEndDate"
-            value={
-              (table.getColumn("periodEndDate")?.getFilterValue() as string) ??
-              ""
-            }
-            onChange={(event) =>
-              table
-                .getColumn("periodEndDate")
-                ?.setFilterValue(event.target.value)
-            }
-            className="hidden max-w-sm lg:block"
-          />
-        </div>
+        <Input
+          placeholder="Filter index..."
+          id="index"
+          value={(table.getColumn("index")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("index")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -286,4 +268,4 @@ const WorkingPapersFileTable = <TData, TValue>({
   );
 };
 
-export default WorkingPapersFileTable;
+export default FileSectionTable;
