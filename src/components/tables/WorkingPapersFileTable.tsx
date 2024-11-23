@@ -53,7 +53,7 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-const DataTable = <TData, TValue>({
+const WorkingPapersFileTable = <TData, TValue>({
   data,
   columns,
 }: DataTableProps<TData, TValue>) => {
@@ -83,15 +83,15 @@ const DataTable = <TData, TValue>({
   return (
     <>
       <div className="flex items-center pb-2">
-        <Input
-          placeholder="Filter managers..."
+        {/* <Input
+          placeholder="Filter team by name..."
           id="name"
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
-        />
+        /> */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -268,4 +268,4 @@ const DataTable = <TData, TValue>({
   );
 };
 
-export default DataTable;
+export default WorkingPapersFileTable;

@@ -7,6 +7,7 @@ const TableSearch = () => {
       <input
         type="text"
         placeholder="Search..."
+        id="search"
         className="w-[200px] bg-transparent p-2 outline-none"
       />
     </div>

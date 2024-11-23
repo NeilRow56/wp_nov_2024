@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
+import { Input } from "../ui/input";
 
 const Navbar = () => {
   return (
@@ -7,8 +8,9 @@ const Navbar = () => {
       {/* SEARCH BAR */}
       <div className="hidden items-center gap-2 rounded-full px-2 text-xs ring-[1.5px] ring-gray-300 md:flex">
         <Image src="/search.png" alt="" width={14} height={14} />
-        <input
+        <Input
           type="text"
+          name="search1"
           placeholder="Search..."
           className="w-[200px] bg-transparent p-2 outline-none"
         />

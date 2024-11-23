@@ -86,6 +86,7 @@ const ClientDataTable = <TData, TValue>({
         <div className="flex lg:gap-24 xl:gap-[370px]">
           <Input
             placeholder="Filter client name..."
+            id="name"
             value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
@@ -94,6 +95,7 @@ const ClientDataTable = <TData, TValue>({
           />
           <Input
             placeholder="Filter categories..."
+            id="category"
             value={
               (table.getColumn("category")?.getFilterValue() as string) ?? ""
             }

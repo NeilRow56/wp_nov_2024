@@ -167,7 +167,7 @@ export const columns: ColumnDef<Staff>[] = [
               <Link href={`/team/${team.id}/editTeam`}>Edit</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${team.id}/deleteTeam`}>Delete</Link>
+              <Link href={`/team/${team.id}/deleteTeam`}>Delete</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

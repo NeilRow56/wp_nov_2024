@@ -39,14 +39,14 @@ const menuItems = [
       },
       {
         icon: "/lesson.png",
-        label: "Year File",
-        href: "/list/yearFile",
+        label: "Working papers",
+        href: "/list/workingPapersFile",
         visible: ["admin", "teacher"],
       },
       {
         icon: "/exam.png",
-        label: "File Detail",
-        href: "/list/fileDetail",
+        label: "File sections",
+        href: "/list/fileSections",
         visible: ["admin", "manager", "staff"],
       },
       //   {

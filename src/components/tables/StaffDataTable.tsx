@@ -85,6 +85,7 @@ const StaffDataTable = <TData, TValue>({
       <div className="flex items-center pb-2">
         <Input
           placeholder="Filter team by name..."
+          id="name"
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
