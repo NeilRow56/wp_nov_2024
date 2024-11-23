@@ -723,7 +723,7 @@ export const eventsData = [
   {
     id: 1,
     title: "Lake Trip",
-    class: "1A",
+    team: "1A",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -731,7 +731,7 @@ export const eventsData = [
   {
     id: 2,
     title: "Picnic",
-    class: "2A",
+    team: "2A",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -739,7 +739,7 @@ export const eventsData = [
   {
     id: 3,
     title: "Beach Trip",
-    class: "3A",
+    team: "3A",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -747,7 +747,7 @@ export const eventsData = [
   {
     id: 4,
     title: "Museum Trip",
-    class: "4A",
+    team: "4A",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -755,7 +755,7 @@ export const eventsData = [
   {
     id: 5,
     title: "Music Concert",
-    class: "5A",
+    team: "5A",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -763,7 +763,7 @@ export const eventsData = [
   {
     id: 6,
     title: "Magician Show",
-    class: "1B",
+    team: "1B",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -771,7 +771,7 @@ export const eventsData = [
   {
     id: 7,
     title: "Lake Trip",
-    class: "2B",
+    team: "2B",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -779,7 +779,7 @@ export const eventsData = [
   {
     id: 8,
     title: "Cycling Race",
-    class: "3B",
+    team: "3B",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -787,7 +787,7 @@ export const eventsData = [
   {
     id: 9,
     title: "Art Exhibition",
-    class: "4B",
+    team: "4B",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
@@ -795,7 +795,7 @@ export const eventsData = [
   {
     id: 10,
     title: "Sports Tournament",
-    class: "5B",
+    team: "5B",
     date: "2025-01-01",
     startTime: "10:00",
     endTime: "11:00",
