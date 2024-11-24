@@ -15,12 +15,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Announcement } from "@/types/Annoucement.types";
 
-import { Client } from "@/types/Client.types";
-
-export const columns: ColumnDef<Client>[] = [
+export const columns: ColumnDef<Announcement>[] = [
   {
-    accessorKey: "name",
+    accessorKey: "title",
     header: ({ column }) => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
@@ -28,7 +27,7 @@ export const columns: ColumnDef<Client>[] = [
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
-            Name
+            Title
             <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         </div>
@@ -38,12 +37,12 @@ export const columns: ColumnDef<Client>[] = [
       <div
         className={cn("rounded-lg p-2 text-start text-lg font-bold capitalize")}
       >
-        {row.original.name}
+        {row.original.title}
       </div>
     ),
   },
   {
-    accessorKey: "category",
+    accessorKey: "client",
     header: ({ column }) => {
       return (
         <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
@@ -51,7 +50,53 @@ export const columns: ColumnDef<Client>[] = [
             variant="ghost"
             onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
           >
-            Category
+            client
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      );
+    },
+    cell: ({ row }) => (
+      <div
+        className={cn("hidden rounded-lg p-2 text-center capitalize lg:block")}
+      >
+        {row.original.client}
+      </div>
+    ),
+  },
+  {
+    accessorKey: "team",
+    header: ({ column }) => {
+      return (
+        <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Team member
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
+      );
+    },
+    cell: ({ row }) => (
+      <div
+        className={cn("hidden rounded-lg p-2 text-center capitalize lg:block")}
+      >
+        {row.original.team}
+      </div>
+    ),
+  },
+  {
+    accessorKey: "date",
+    header: ({ column }) => {
+      return (
+        <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Date
             <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         </div>
@@ -61,38 +106,7 @@ export const columns: ColumnDef<Client>[] = [
       <div
         className={cn("hidden rounded-lg p-2 text-start capitalize lg:block")}
       >
-        {row.original.category}
-      </div>
-    ),
-  },
-  {
-    accessorKey: "status",
-    header: ({ column }) => {
-      return (
-        <div className="jusify-center flex flex-col font-semibold text-orange-400">
-          <Button
-            variant="ghost"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          >
-            Status
-            <ArrowUpDown className="ml-2 h-4 w-4" />
-          </Button>
-        </div>
-      );
-    },
-    cell: ({ row }) => (
-      <div
-        className={cn(
-          "rounded-lg p-2 text-center capitalize",
-          row.original.status === "active" &&
-            "bg-emerald-400/10 text-emerald-500",
-          row.original.status === "archived" && "bg-red-400/10 text-red-500",
-          row.original.status === "stop_work" && "bg-red-400/10 text-red-500",
-          row.original.status === "awaiting_ml_checks" &&
-            "bg-amber-400/10 text-amber-500",
-        )}
-      >
-        {row.original.status}
+        {row.original.date}
       </div>
     ),
   },
@@ -109,7 +123,7 @@ export const columns: ColumnDef<Client>[] = [
     },
     cell: ({ row }) => {
       // IMPORTANT THIS IS THE CLIENT DATA FROM WHICH YOU CAN GET THE ID
-      const client = row.original;
+      const announcement = row.original;
 
       return (
         <DropdownMenu>
@@ -123,14 +137,14 @@ export const columns: ColumnDef<Client>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
+
             <DropdownMenuItem asChild>
-              <Link href={`/list/clients/${client.id}`}>Files</Link>
+              <Link href={`/announcements/${announcement.id}/editAnnouncement`}>
+                Edit
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/list/clients/${client.id}`}>Edit</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href={`/list/clients/${client.id}/deleteClient`}>
+              <Link href={`/announcements/${announcement.id}/deleteEvent`}>
                 Delete
               </Link>
             </DropdownMenuItem>

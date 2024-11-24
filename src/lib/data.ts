@@ -1,6 +1,6 @@
 // TEMPORARY DATA
 
-export let role = "admin";
+export let role = "manager";
 
 export const managersData = [
   {
@@ -11,7 +11,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Math", "Geometry"],
+    clients: ["Math", "Geometry"],
     // classes: ["1B", "2A", "3C"],
     // address: "12 Fallow St, Anytown, USA",
   },
@@ -23,7 +23,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Physics", "Chemistry"],
+    clients: ["Physics", "Chemistry"],
     // classes: ["5A", "4B", "3C"],
     // address: "15 Stag St, Anytown, USA",
   },
@@ -35,7 +35,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Biology"],
+    clients: ["Biology"],
     // classes: ["5A", "4B", "3C"],
     // address: "183 Otter St, Anytown, USA",
   },
@@ -47,7 +47,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["History"],
+    clients: ["History"],
     // classes: ["5A", "4B", "3C"],
     // address: "1 Main St, Anytown, USA",
   },
@@ -59,7 +59,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Music", "History"],
+    clients: ["Music", "History"],
     // classes: ["5A", "4B", "3C"],
     // address: "8 Main St, Anytown, USA",
   },
@@ -71,7 +71,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Physics"],
+    clients: ["Physics"],
     // classes: ["5A", "4B", "3C"],
     // address: "123 Main St, Anytown, USA",
   },
@@ -83,7 +83,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["English", "Spanish"],
+    clients: ["English", "Spanish"],
     // classes: ["5A", "4B", "3C"],
     // address: "123 Main St, Anytown, USA",
   },
@@ -95,7 +95,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Math", "Geometry"],
+    clients: ["Math", "Geometry"],
     // classes: [" 5A", " 4B", " 3C"],
     // address: "123 Main St, Anytown, USA",
   },
@@ -107,7 +107,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Literature", "English"],
+    clients: ["Literature", "English"],
     // classes: ["5A", "4B", "3C"],
     // address: "123 Main St, Anytown, USA",
   },
@@ -119,7 +119,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Biology"],
+    clients: ["Biology"],
     // classes: ["5A", "4B", "3C"],
     // address: "123 Main St, Anytown, USA",
   },
@@ -131,7 +131,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Math", "Geometry"],
+    clients: ["Math", "Geometry"],
     // classes: ["1B", "2A", "3C"],
     // address: "123 Main St, Anytown, USA",
   },
@@ -143,7 +143,7 @@ export const managersData = [
     photo:
       "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
     phone: 1234567890,
-    subjects: ["Physics", "Chemistry"],
+    clients: ["Physics", "Chemistry"],
     // classes: ["5A", "4B", "3C"],
     // address: "123 Main St, Anytown, USA",
   },
@@ -275,6 +275,7 @@ export const clientData = [
     id: 1,
     name: "John Doe Limited",
     category: "Limited Company",
+    supervisor: "Joseph Padilla",
     periodEnding: "31 December 2023",
     contactInfo: "Telephone Bob on 01536 4177778",
     status: "active",
@@ -806,61 +807,36 @@ export const announcementsData = [
   {
     id: 1,
     title: "About 4A Math Test",
-    class: "4A",
+    client: "4A",
+    team: "John",
     date: "2025-01-01",
   },
   {
     id: 2,
     title: "About 3A Math Test",
-    class: "3A",
+    client: "4b",
+    team: "James",
     date: "2025-01-01",
   },
   {
     id: 3,
     title: "About 3B Math Test",
-    class: "3B",
+    client: "2A",
+    team: "Sarah",
     date: "2025-01-01",
   },
   {
     id: 4,
     title: "About 6A Math Test",
-    class: "6A",
+    client: "8BA",
+    team: "William",
     date: "2025-01-01",
   },
   {
     id: 5,
     title: "About 8C Math Test",
-    class: "8C",
-    date: "2025-01-01",
-  },
-  {
-    id: 6,
-    title: "About 2A Math Test",
-    class: "2A",
-    date: "2025-01-01",
-  },
-  {
-    id: 7,
-    title: "About 4C Math Test",
-    class: "4C",
-    date: "2025-01-01",
-  },
-  {
-    id: 8,
-    title: "About 4B Math Test",
-    class: "4B",
-    date: "2025-01-01",
-  },
-  {
-    id: 9,
-    title: "About 3C Math Test",
-    class: "3C",
-    date: "2025-01-01",
-  },
-  {
-    id: 10,
-    title: "About 1C Math Test",
-    class: "1C",
+    client: "4C",
+    team: "Bert",
     date: "2025-01-01",
   },
 ];

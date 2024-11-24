@@ -72,26 +72,16 @@ export const columns: ColumnDef<Manager>[] = [
       );
     },
   },
-  // {
-  //   accessorKey: "subjects",
-  //   header: () => {
-  //     return (
-  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-  //         Subjects
-  //       </div>
-  //     );
-  //   },
-  // },
-  // {
-  //   accessorKey: "classes",
-  //   header: () => {
-  //     return (
-  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-  //         Classes
-  //       </div>
-  //     );
-  //   },
-  // },
+  {
+    accessorKey: "clients",
+    header: () => {
+      return (
+        <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
+          Clients
+        </div>
+      );
+    },
+  },
   {
     accessorKey: "phone",
     header: () => {
@@ -118,22 +108,6 @@ export const columns: ColumnDef<Manager>[] = [
       );
     },
   },
-  // {
-  //   accessorKey: "address",
-  //   header: ({ column }) => {
-  //     return (
-  //       <div className="hidden justify-start font-semibold text-orange-400 lg:table-cell">
-  //         <Button
-  //           variant="ghost"
-  //           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-  //         >
-  //           Address
-  //           <ArrowUpDown className="ml-2 h-4 w-4" />
-  //         </Button>
-  //       </div>
-  //     );
-  //   },
-  // },
   {
     accessorKey: "actions",
     header: () => {
@@ -159,14 +133,14 @@ export const columns: ColumnDef<Manager>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {/* <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}`}>Files</Link>
-            </DropdownMenuItem> */}
+
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}/editManager`}>Edit</Link>
+              <Link href={`/list/managers/${manager.managerId}`}>Edit</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/manager/${manager.id}/deleteManager`}>Delete</Link>
+              <Link href={`list/managers/${manager.id}/deleteManager`}>
+                Delete
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

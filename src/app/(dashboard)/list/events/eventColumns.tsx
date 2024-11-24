@@ -104,7 +104,7 @@ export const columns: ColumnDef<Event>[] = [
     },
     cell: ({ row }) => (
       <div
-        className={cn("hidden rounded-lg p-2 text-start capitalize lg:block")}
+        className={cn("hidden rounded-lg p-2 text-center capitalize lg:block")}
       >
         {row.original.startTime}
       </div>
@@ -127,7 +127,7 @@ export const columns: ColumnDef<Event>[] = [
     },
     cell: ({ row }) => (
       <div
-        className={cn("hidden rounded-lg p-2 text-start capitalize lg:block")}
+        className={cn("hidden rounded-lg p-2 text-center capitalize lg:block")}
       >
         {row.original.endTime}
       </div>

@@ -5,7 +5,7 @@ export type Manager = {
   email?: string;
   photo: string;
   phone: number;
-  subjects: string[];
+  clients: string[];
   // classes: string[];
   // address: string;
 };

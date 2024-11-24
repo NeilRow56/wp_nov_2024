@@ -24,11 +24,10 @@ const ManagersListPage = () => {
             <button className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {role === "admin" && (
-              <button className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
-                <PlusCircle />
-              </button>
-            )}
+
+            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
+              <PlusCircle />
+            </button>
           </div>
         </div>
       </div>

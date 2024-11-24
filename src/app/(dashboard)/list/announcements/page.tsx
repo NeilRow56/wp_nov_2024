@@ -1,15 +1,14 @@
 import TableSearch from "@/components/dashboard/TableSearch";
-import { clientData, eventsData, role } from "@/lib/data";
+import { announcementsData, clientData, eventsData, role } from "@/lib/data";
 import { PlusCircle } from "lucide-react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { EmptyState } from "@/components/shared/EmptyState";
+import { columns } from "./announcementColumns";
+import AnnouncementTable from "@/components/tables/AnnoucementTable";
 
-import { columns } from "./eventColumns";
-import EventTable from "@/components/tables/EventTable";
-
-const EventsListPage = () => {
+const AnnoucementsListPage = () => {
   return (
     <div className="m-4 mt-0 flex-1 rounded-md bg-white p-4">
       {/* TOP */}
@@ -37,11 +36,11 @@ const EventsListPage = () => {
       {clientData === undefined || clientData.length === 0 ? (
         <div className="container mx-auto mt-8">
           <EmptyState
-            title="You don't have any Events created"
-            description="You currently don't have any events. Once created you can
+            title="You don't have any Announcements created"
+            description="You currently don't have any announcements. Once created you can
       see them here!"
-            buttonText="Create Event"
-            href="/events/newEvent"
+            buttonText="Create Annoucement"
+            href="/announcements/newAnnouncements"
           />
         </div>
       ) : (
@@ -50,11 +49,11 @@ const EventsListPage = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="text-3xl font-bold text-primary">
-                  Events
+                  Announcements
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <EventTable data={eventsData} columns={columns} />
+                <AnnouncementTable data={announcementsData} columns={columns} />
               </CardContent>
             </Card>
           </div>
@@ -64,4 +63,4 @@ const EventsListPage = () => {
   );
 };
 
-export default EventsListPage;
+export default AnnoucementsListPage;
