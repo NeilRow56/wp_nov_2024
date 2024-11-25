@@ -3,7 +3,7 @@ import BigCalendar from "@/components/dashboard/BigCalendar";
 import Image from "next/image";
 import Link from "next/link";
 
-const IndividualManagerPage = async () => {
+const IndividualTeamPage = async () => {
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 xl:flex-row">
       {/* LEFT */}
@@ -50,7 +50,7 @@ const IndividualManagerPage = async () => {
           <div className="flex flex-1 flex-wrap justify-between gap-4">
             {/* CARD */}
 
-            <div className="flex w-full gap-4 rounded-md bg-white p-4">
+            {/* <div className="flex w-full gap-4 rounded-md bg-white p-4">
               <Image
                 src="/singleClass.png"
                 alt=""
@@ -69,18 +69,18 @@ const IndividualManagerPage = async () => {
                 <span className="text-sm text-gray-400"> 1 Partnership</span>
                 <span className="text-sm text-gray-400"> 1 Other</span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* BOTTOM */}
         <div className="mt-4 h-[600px] rounded-md bg-white p-4">
-          <h1>Manager&apos;s Schedule</h1>
+          <h1> Schedule</h1>
           <BigCalendar />
         </div>
       </div>
       {/* RIGHT */}
       <div className="flex w-full flex-col gap-4 xl:w-1/3">
-        <div className="rounded-md bg-white p-4">
+        {/* <div className="rounded-md bg-white p-4">
           <h1 className="text-xl font-semibold text-orange-600">Shortcuts</h1>
           <div className="mt-4 flex flex-wrap gap-4 text-xs text-gray-500">
             <Link
@@ -96,11 +96,11 @@ const IndividualManagerPage = async () => {
               Manager&apos;s Files
             </Link>
           </div>
-        </div>
+        </div> */}
         <Announcements />
       </div>
     </div>
   );
 };
 
-export default IndividualManagerPage;
+export default IndividualTeamPage;

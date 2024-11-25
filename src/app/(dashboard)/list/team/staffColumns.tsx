@@ -73,26 +73,7 @@ export const columns: ColumnDef<Staff>[] = [
       );
     },
   },
-  // {
-  //   accessorKey: "grade",
-  //   header: () => {
-  //     return (
-  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-  //         Grade
-  //       </div>
-  //     );
-  //   },
-  // },
-  // {
-  //   accessorKey: "class",
-  //   header: () => {
-  //     return (
-  //       <div className="hidden justify-start font-semibold text-orange-400 md:table-cell">
-  //         Class
-  //       </div>
-  //     );
-  //   },
-  // },
+
   {
     accessorKey: "phone",
     header: () => {
@@ -160,14 +141,14 @@ export const columns: ColumnDef<Staff>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            {/* <DropdownMenuItem asChild>
-              <Link href={`/manager/${staff.id}`}>Files</Link>
-            </DropdownMenuItem> */}
+
             <DropdownMenuItem asChild>
-              <Link href={`/team/${team.id}/editTeam`}>Edit</Link>
+              <Link href={`/list/team/${team.teamId}`}>Edit</Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link href={`/team/${team.id}/deleteTeam`}>Delete</Link>
+              <Link href={`list/team/${team.teamId}/deleteTeamMember`}>
+                Delete
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
