@@ -33,7 +33,7 @@ const IndividualTeamPage = async () => {
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-medium">
                 <div className="flex w-full items-center gap-2 md:w-1/3 lg:w-full 2xl:w-1/3">
                   <Image src="/date.png" alt="" width={14} height={14} />
-                  <span>25 January 1970</span>
+                  <span>25 January 2010</span>
                 </div>
                 <div className="flex w-full items-center gap-2 md:w-1/3 lg:w-full 2xl:w-1/3">
                   <Image src="/mail.png" alt="" width={14} height={14} />

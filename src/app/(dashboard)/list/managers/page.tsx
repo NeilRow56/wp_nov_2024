@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { columns } from "./managerColumns";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const ManagersListPage = () => {
   return (
@@ -25,9 +27,16 @@ const ManagersListPage = () => {
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
 
-            <button className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500">
-              <PlusCircle />
-            </button>
+            {role === "admin" && (
+              <Button
+                asChild
+                className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500"
+              >
+                <Link href="/manager/newManager">
+                  <PlusCircle className="text-black hover:text-white" />
+                </Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>
